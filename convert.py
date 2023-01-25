@@ -15,7 +15,7 @@ from model import Encoder, Decoder
 
 @hydra.main(config_path="config/convert.yaml")
 def convert(cfg):
-    dataset_path = Path(utils.to_absolute_path("datasets")) / cfg.dataset.path
+    dataset_path = Path(utils.to_absolute_path("config/dataset")) / cfg.dataset.path
     with open(dataset_path / "speakers.json") as file:
         speakers = sorted(json.load(file))
 
